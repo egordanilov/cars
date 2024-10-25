@@ -1,0 +1,13 @@
+@import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/light";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.app {
+  background-color: var(--bg);
+  font: var(--text_4);
+  min-height: 100vh;
+  color: var(--black-100);
+}
