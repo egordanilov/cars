@@ -11,3 +11,23 @@
   min-height: 100vh;
   color: var(--black-100);
 }
+
+h1 {
+  font: var(--heading_1);
+}
+
+.main-page-wrapper {
+  padding: 40px 240px;
+}
+
+.news-list {
+  width: 1440px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 1023px) {
+
+}
