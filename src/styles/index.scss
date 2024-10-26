@@ -17,6 +17,7 @@ h1 {
 }
 
 .main-page-wrapper {
+  margin: 0 auto;
   padding: 40px 240px;
 }
 
@@ -25,9 +26,19 @@ h1 {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1919px) {
-
+  .main-page-wrapper {
+    padding: 40px 0;
+    width: 956px;
+  }
 }
 
 @media screen and (min-width: 375px) and (max-width: 1023px) {
+  .main-page-wrapper {
+    padding: 32px 0;
+    width: 343px;
+  }
 
+  h1 {
+    font: var(--heading_2);
+  }
 }

@@ -1,5 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import NewsListItem from "../../NewsListItem/NewsListItem";
+import classnames from './InfiniteNewsFetch.module.scss';
 
+interface IItem {
+   id: number,
+    title: string,
+    description: string,
+    publishedDate: string,
+    url: string,
+    fullUrl: string,
+    titleImageUrl: string,
+    categoryType: string
+}
 const InfiniteScrollComponent: React.FC = () => {
     const [data, setData] = useState<any[]>([]);
     const [page, setPage] = useState(1);
@@ -37,9 +49,9 @@ const InfiniteScrollComponent: React.FC = () => {
     }, [handleScroll]);
 
     return (
-        <div>
-            {data.map(item => (
-                <div key={item.id}>{item.title}<span>item</span></div>
+        <div className={classnames.infiniteNewsWrapper}>
+            {data.map((item: IItem) => (
+                <NewsListItem key={item.id} title={item.title} titleImageUrl={item.titleImageUrl} publishedDate={item.publishedDate} url={item.url} />
             ))}
             {loading && <p>Loading...</p>}
         </div>

@@ -19,8 +19,8 @@ const App = () => {
                 */}
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
-                        <Route path={'/about'} element={<ArticlePageAsync/>}/>
                         <Route path={'/'} element={<MainPageAsync/>}/>
+                        <Route path={'/:newsUrl'} element={<ArticlePageAsync/>}/>
                     </Routes>
                 </Suspense>
             </main>
