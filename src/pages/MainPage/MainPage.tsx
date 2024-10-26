@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import InfiniteNewsFetch from "../../features/InfiniteNewsFetch/InfiniteNewsFetch";
+
 import Modal from "../../shared/Modal/Modal";
+import {OpenModal} from "../../features/InfiniteNewsFetch/OpenModal/OpenModal";
+import InfiniteNewsFetch from "../../features/InfiniteNewsFetch/InfiniteNewsFetch";
 
 const MainPage = () => {
     const [showModal, setShowModal] = useState(false);
@@ -15,8 +17,8 @@ const MainPage = () => {
 
     return (
         <section className="main-page-wrapper">
+            <OpenModal openModal={handleOpenModal} />
             <h1>Автомобильные новости</h1>
-            <button onClick={handleOpenModal}>Open Modal</button>
             <Modal show={showModal} onClose={handleCloseModal}>
                 <h1>Modal Content</h1>
                 <p>This is an example modal.</p>
