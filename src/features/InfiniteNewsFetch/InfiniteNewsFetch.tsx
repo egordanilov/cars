@@ -47,7 +47,7 @@ const InfiniteScrollComponent: React.FC = () => {
     useEffect(() => {
         const storedData = localStorage.getItem('myDataArray');
 
-        if (storedData != '') {
+        if (storedData != null && storedData !== '') {
             const dataArray = JSON.parse(storedData);
             console.log(dataArray);
             setData(prevData => [...dataArray, ...prevData]);

@@ -6,7 +6,7 @@ import InfiniteNewsFetch from "../../features/InfiniteNewsFetch/InfiniteNewsFetc
 import {AddArticle} from "../../features/AddArticle/AddArticle";
 
 const MainPage = () => {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     const handleOpenModal = () => {
         setShowModal(true);
@@ -21,7 +21,7 @@ const MainPage = () => {
             <OpenModal openModal={handleOpenModal} />
             <h1>Автомобильные новости</h1>
             <Modal show={showModal} onClose={handleCloseModal}>
-                <AddArticle />
+                <AddArticle closeModal={handleCloseModal} />
             </Modal>
             <InfiniteNewsFetch/>
         </section>
