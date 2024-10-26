@@ -15,5 +15,3 @@ export const OpenModal = ({openModal}: {openModal: () => void}) => {
         </div>
     )
 }
-
-
