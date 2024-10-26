@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
+import HTMLRenderer from "../../NewsListItem/HTMLRenderer/HTMLRenderer";
+
 
 const ArticlePage = () => {
     const {  newsUrl } = useParams<{ newsUrl: string }>();
@@ -32,7 +34,7 @@ const ArticlePage = () => {
                 <h1>{data.title}</h1>
                 <p>{data.publishedDate}</p>
                 <img src={data.titleImageUrl} alt={data.title} />
-                <p>{[data.text]}</p>
+                <HTMLRenderer rawHTML={data.text} />
             </div>
         ) : (
             <p>Loading...</p>
