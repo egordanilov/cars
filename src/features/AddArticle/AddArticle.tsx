@@ -41,15 +41,29 @@ export const AddArticle = () => {
         setPreviewUrl(null);
     }
 
+    function saveObject(data: any) {
+        // Retrieve the existing array from localStorage
+        let storedData = localStorage.getItem('myDataArray');
+        let dataArray = storedData ? JSON.parse(storedData) : [];
+
+        // Add the new object to the array
+        dataArray.push(data);
+
+        // Store the updated array back in localStorage
+        localStorage.setItem('myDataArray', JSON.stringify(dataArray));
+    }
+
     const handleSubmit =  (title: string, text: string, titleImageUrl: string) => {
             const newArticle = {
                 title: title,
                 text: text,
                 titleImageUrl: titleImageUrl
             }
-
             console.log(newArticle);
+            saveObject(newArticle);
     }
+
+
 
     return (
         <div className={classnames.article_wrapper}>
