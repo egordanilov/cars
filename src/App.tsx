@@ -5,6 +5,7 @@ import { ArticlePageAsync } from "./pages/ArticlePage/ArticlePage.async";
 import {MainPageAsync} from "./pages/MainPage/MainPage.async";
 import {useTheme} from "./theme/useTheme";
 import {Header} from "./shared/Header/Header";
+import {DynamicPageAsync} from "./pages/DynamicPage/DynamicPage.async";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
                         <Routes>
                             <Route path={'/'} element={<MainPageAsync/>}/>
                             <Route path={'/:newsUrl'} element={<ArticlePageAsync/>}/>
+                            <Route path={'/:first/:second'} element={<DynamicPageAsync /> } />
                         </Routes>
                 </Suspense>
             </main>
