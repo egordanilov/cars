@@ -16,6 +16,17 @@ h1 {
   font: var(--heading_1);
 }
 
+p {
+  /* font: var(--text_1); */
+  margin-top: 36px;
+}
+
+.article-page-wrapper {
+  padding-top: 40px;
+  width: 952px;
+  margin: 0 auto;
+}
+
 .main-page-wrapper {
   margin: 0 auto;
   padding: 40px 240px;
@@ -35,6 +46,10 @@ h1 {
 @media screen and (min-width: 375px) and (max-width: 1023px) {
   .main-page-wrapper {
     padding: 32px 0;
+    width: 343px;
+  }
+
+  .article-page-wrapper {
     width: 343px;
   }
 

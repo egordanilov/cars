@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import './styles/index.scss';
 import { ArticlePageAsync } from "./pages/ArticlePage/ArticlePage.async";
 import {MainPageAsync} from "./pages/MainPage/MainPage.async";
@@ -13,15 +13,11 @@ const App = () => {
     return (
             <main className={`app ${theme}`}>
                 <Header />
-                {/*
-                    <Link to={'/'}>Главная</Link>
-                    <Link to={'/about'}>О сайте</Link>
-                */}
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Routes>
-                        <Route path={'/'} element={<MainPageAsync/>}/>
-                        <Route path={'/:newsUrl'} element={<ArticlePageAsync/>}/>
-                    </Routes>
+                        <Routes>
+                            <Route path={'/'} element={<MainPageAsync/>}/>
+                            <Route path={'/:newsUrl'} element={<ArticlePageAsync/>}/>
+                        </Routes>
                 </Suspense>
             </main>
     );

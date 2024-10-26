@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
 import HTMLRenderer from "../../NewsListItem/HTMLRenderer/HTMLRenderer";
-
+import {FormattedDate} from "../../shared/FormattedDate/FormattedDate";
+import cn from './ArticlePage.module.scss';
 
 const ArticlePage = () => {
     const {  newsUrl } = useParams<{ newsUrl: string }>();
@@ -27,13 +28,13 @@ const ArticlePage = () => {
             });
     }, [fullFetchUrl]);
 
-    return <div>
+    return <div className={cn.wrapper}>
         {error && <p>Error: {error}</p>}
         {data ? (
-            <div>
+            <div className="article-page-wrapper">
                 <h1>{data.title}</h1>
-                <p>{data.publishedDate}</p>
-                <img src={data.titleImageUrl} alt={data.title} />
+                <FormattedDate date={data.publishedDate} />
+                <img className={cn.image} src={data.titleImageUrl} alt={data.title} />
                 <HTMLRenderer rawHTML={data.text} />
             </div>
         ) : (

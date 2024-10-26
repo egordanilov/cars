@@ -1,7 +1,8 @@
 import cn from './NewsListItem.module.scss';
-import {dateFormatter} from "../features/InfiniteNewsFetch/utils/dateFormatter";
+import {dateFormatter} from "../shared/FormattedDate/utils/dateFormatter";
 import {Link} from "react-router-dom";
 import {trimString} from "./utils/trimUrlString";
+import {FormattedDate} from "../shared/FormattedDate/FormattedDate";
 
 interface NewsListItemProps {
     title: string;
@@ -15,9 +16,7 @@ const NewsListItem = (props: NewsListItemProps) => {
         <Link to={trimString(props.url)} state={props}>
             <div className={cn.newsCardWrapper}>
                 <img src={props.titleImageUrl} alt={props.title} className={cn.image}/>
-                <div className={cn.date_wrapper}>
-                    {dateFormatter(props.publishedDate)}
-                </div>
+                <FormattedDate date={props.publishedDate} />
                 <p className={cn.card_title}>{props.title}</p>
             </div>
         </Link>
