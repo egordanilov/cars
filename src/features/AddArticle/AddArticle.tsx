@@ -1,12 +1,6 @@
 import classnames from "./AddArticle.module.scss";
 import {useRef, useState} from "react";
 
-interface FormData {
-    title: string;
-    text: string;
-    titleImageUrl: string;
-}
-
 export const AddArticle = () => {
     const [articleTitle, setArticleTitle] = useState<string>("");
     const [articleText, setArticleText] = useState<string>("");
@@ -57,7 +51,16 @@ export const AddArticle = () => {
             const newArticle = {
                 title: title,
                 text: text,
-                titleImageUrl: titleImageUrl
+                titleImageUrl: titleImageUrl,
+                id: 5435435,
+                //id: uuidv4()
+
+
+                description: "г. Петрозаводск, ул. Древлянка, д. 20",
+                publishedDate: "2024-10-04T00:00:00",
+                url: "novosti-kompanii/20200",
+                fullUrl: "https://www.autodoc.ru/novosti-kompanii/20200",
+                categoryType: "Новости компании"
             }
             console.log(newArticle);
             saveObject(newArticle);
