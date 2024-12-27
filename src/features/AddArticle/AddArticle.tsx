@@ -84,7 +84,7 @@ export const AddArticle = ({closeModal}: {closeModal: () => void}) => {
                     <div className={classnames.success_image_and_title_wrapper}>
                         <div className={classnames.preview_image_wrapper}>
                             <img className={classnames.preview_image} src={previewUrl} alt="Selected File"
-                                 style={{width: '200px', height: 'auto'}}/>
+                                 style={{width: '200px', height: '107px'}}/>
                         </div>
                         <div className={classnames.success_article_title}>
                             {articleTitle}
@@ -114,8 +114,7 @@ export const AddArticle = ({closeModal}: {closeModal: () => void}) => {
                             onClick={handleClick}>{previewUrl ? 'Заменить изображение' : 'Загрузить изображение'}</button>
                     {previewUrl && (
                         <div className={classnames.preview_image_wrapper}>
-                            <img className={classnames.preview_image} src={previewUrl} alt="Selected File"
-                                 style={{width: '200px', height: 'auto'}}/>
+                            <img className={classnames.preview_image} src={previewUrl} alt="Selected File" />
                             <button className={classnames.remove_image_button}
                                     onClick={removeImageHandler}>&times;</button>
                         </div>
