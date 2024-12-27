@@ -20,18 +20,8 @@ header {
 }
 
 .header_heading {
+  margin: 0 auto;
   text-wrap: nowrap;
-}
-
-.plus_wrapper {
-  width: 60px;
-  height: 60px;
-}
-
-@media(hover: hover) {
-  .plus_wrapper:hover {
-    cursor: pointer;
-  }
 }
 
 @media screen and (max-width: 1919px) and (min-width: 1024px) {
@@ -57,14 +47,9 @@ header {
     left: 30px;
   }
 
-  .header_heading {
-    margin: 0 auto;
-  }
-
   .plus_wrapper {
     position: fixed;
     right: 16px;
     bottom: 16px;
-
   }
 }

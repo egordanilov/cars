@@ -43,6 +43,17 @@ const InfiniteScrollComponent: React.FC = () => {
         }
     }, [loading, hasMore]);
 
+    //see if there are any news created by user stored in localStorage
+    useEffect(() => {
+        const storedData = localStorage.getItem('myDataArray');
+
+        if (storedData != null && storedData !== '') {
+            const dataArray = JSON.parse(storedData);
+            console.log(dataArray);
+            setData(prevData => [...dataArray, ...prevData]);
+        }
+    }, []);
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
